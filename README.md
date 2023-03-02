@@ -19,7 +19,11 @@ yarn dev
 ### 4. Launch Microsoft Edge or Chrome, and access https://localhost:3000 :+1:
 
 📫 How to reach us: :call_me_hand: <br>
+<<<<<<< Updated upstream
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Email](nfthon@gmail.com)
+=======
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Email](nfthon@yahoo.com)
+>>>>>>> Stashed changes
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Twitter](https://www.twitter.com/nftthon) 
 
 #### Made with :heart: in Sg :singapore:
