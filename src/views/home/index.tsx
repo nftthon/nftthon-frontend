@@ -136,7 +136,6 @@ export const HomeView: FC<any> = ( { fetchedData } ) => {
         <div className="pt-8 md:pt-16">
           <ContestCards fetchedData={fetchedData}/>
         </div>
-        
       </div>   
   );
 };

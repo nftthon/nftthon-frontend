@@ -16,24 +16,28 @@ export const AppBar: FC = props => {
       <div className="flex px-4 justify-center items-center">
         <Link href="/">
           <div>
-            <Image src="/logo.png" width={37} height={37} className="hidden md:inline px-4"></Image>
+            <Image src="/logo.png" width={37} height={37} className="hidden md:inline-block px-4"></Image>
             <div className="px-4 xl:px-6 hidden md:inline-block text-md md:text-xl xl:text-4xl font-bold text-d-pink">
               NFTthon 
             </div>
           </div> 
         </Link>
       </div>
-      <div className="pr-2 flex justify-center items-center space-x-4 md:space-x-8 border-b-2">
+      <div className="pr-2 text-xs md:text-normal flex justify-center items-center space-x-4 md:space-x-8 border-b-2">
         <Link href="/">
-          <a className="text-d-pink font-bold">Home</a>
+          <div className="text-d-pink font-bold">Home</div>
         </Link>
 
         <Link href="/launch">
-          <a className=" text-d-pink font-bold">Launch</a>
+          <div className=" text-d-pink font-bold">Launch</div>
+        </Link>
+
+        <Link href="/faq">
+          <div className=" text-d-pink font-bold">FAQ</div>
         </Link>
 
         <Link href="/utility">
-          <a className="text-d-pink font-bold">Utility</a>
+          <div className="text-d-pink font-bold">Utility</div>
         </Link>
       </div>
 

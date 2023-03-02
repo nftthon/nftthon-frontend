@@ -68,7 +68,7 @@ export const ContestView: FC<ContestViewProps> = ({
               {new Date(createdAt).toLocaleTimeString()}
             </h2>
             <h2 className="card-content text-slate-800 text-left text-2xl flex-1 font-bold">
-            <span className="font-normal text-slate-500">Starts at: </span>
+            <span className="font-normal text-slate-500">Ends at: </span>
               {new Date(submitEndAt).toLocaleDateString()}&nbsp; 
               {new Date(submitEndAt).toLocaleTimeString()}
             </h2>
