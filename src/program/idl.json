@@ -1,0 +1,454 @@
+{
+  "version": "0.1.0",
+  "name": "nft_contest",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "programOwner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "counter",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "launch",
+      "accounts": [
+        {
+          "name": "contestOwner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "counter",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "contest",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "prizeMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "prizeVaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "prizeTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "prizeAmount",
+          "type": "u64"
+        },
+        {
+          "name": "percentageToArtist",
+          "type": "u8"
+        },
+        {
+          "name": "submitStartAt",
+          "type": "u64"
+        },
+        {
+          "name": "submitEndAt",
+          "type": "u64"
+        },
+        {
+          "name": "voteStartAt",
+          "type": "u64"
+        },
+        {
+          "name": "voteEndAt",
+          "type": "u64"
+        },
+        {
+          "name": "vecSize",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "submit",
+      "accounts": [
+        {
+          "name": "artist",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "contest",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "artwork",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "nftMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "nftVaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "artworkTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "vote",
+      "accounts": [
+        {
+          "name": "voter",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "artwork",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "contest",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "voteData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "votedArtworkId",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "claimByArtist",
+      "accounts": [
+        {
+          "name": "artist",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "artwork",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "contest",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "prizeMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "prizeVaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "prizeVaultAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "artistTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "claimByVoter",
+      "accounts": [
+        {
+          "name": "voter",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "artwork",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "contest",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "prizeMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "voteData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "prizeVaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "prizeVaultAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "voterTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Counter",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "isInitialized",
+            "type": "bool"
+          },
+          {
+            "name": "contestCount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Contest",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "isInitialized",
+            "type": "bool"
+          },
+          {
+            "name": "contestId",
+            "type": "u64"
+          },
+          {
+            "name": "contestOwner",
+            "type": "publicKey"
+          },
+          {
+            "name": "prizeAmount",
+            "type": "u64"
+          },
+          {
+            "name": "percentageToArtist",
+            "type": "u8"
+          },
+          {
+            "name": "submitStartAt",
+            "type": "u64"
+          },
+          {
+            "name": "submitEndAt",
+            "type": "u64"
+          },
+          {
+            "name": "voteStartAt",
+            "type": "u64"
+          },
+          {
+            "name": "voteEndAt",
+            "type": "u64"
+          },
+          {
+            "name": "artworkCount",
+            "type": "u64"
+          },
+          {
+            "name": "artworksVoteCounter",
+            "type": {
+              "vec": "u64"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Artwork",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "isInitialized",
+            "type": "bool"
+          },
+          {
+            "name": "artworkId",
+            "type": "u64"
+          },
+          {
+            "name": "associatedContestId",
+            "type": "u64"
+          },
+          {
+            "name": "artistKey",
+            "type": "publicKey"
+          },
+          {
+            "name": "artworkTokenAccount",
+            "type": "publicKey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "VoteData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "isInitialized",
+            "type": "bool"
+          },
+          {
+            "name": "voterKey",
+            "type": "publicKey"
+          },
+          {
+            "name": "votedArtworkId",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "CounterAlreadyInitialized",
+      "msg": "Counter account is already initialized"
+    },
+    {
+      "code": 6001,
+      "name": "CounterNotInitialized"
+    },
+    {
+      "code": 6002,
+      "name": "Launch"
+    },
+    {
+      "code": 6003,
+      "name": "Submit"
+    },
+    {
+      "code": 6004,
+      "name": "Vote"
+    }
+  ]
+}
