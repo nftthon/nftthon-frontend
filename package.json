@@ -26,7 +26,7 @@
     "buffer-image": "^1.0.0",
     "daisyui": "^1.16.2",
     "firebase": "^9.13.0",
-    "immer": "^9.0.12",
+    "immer": "^9.0.19",
     "keen-slider": "^6.8.5",
     "next": "12.3.4",
     "next-compose-plugins": "^2.2.1",
