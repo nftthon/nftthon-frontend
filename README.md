@@ -2,7 +2,7 @@
 <img src="https://user-images.githubusercontent.com/90440150/222158721-6d80c9a5-eb47-402e-b57c-99ba18919573.png"/>
 
 📫 How to reach us: :call_me_hand: <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: nfthon@gmail.com
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Email](nfthon@gmail.com)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Twitter](https://www.twitter.com/nftthon) 
 
