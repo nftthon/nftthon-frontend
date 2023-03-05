@@ -14,3 +14,8 @@
 + [What is Solana - 1](https://docs.solana.com/introduction) :coffee::doughnut::doughnut:
 + [What is Solana - 2](https://www.thebalancemoney.com/solana-explained-5216271) :coffee::coffee:
 + [How does Solana work](https://cointelegraph.com/news/what-is-solana-and-how-does-it-work):doughnut::doughnut::coffee:
+
+### Open Source
+This repo (NFTthon contract) is licensed under Apache 2.0.
+
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in this repo by you, as defined in the Apache-2.0 license, shall be licensed as above, without any additional terms or conditions. 
