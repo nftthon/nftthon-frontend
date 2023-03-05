@@ -199,13 +199,13 @@ export const CreateNFTAndSubmit: FC<InputProps> = ({
   }
 
   return (
-    <div className="p-4 relative flex flex-col justify-center">
+    <div className="p-4 md:p-6 relative flex flex-col justify-center">
       {/* Create NFT */}
       <div>
       <form onSubmit={handleSubmit(onSubmitImage)}>
         <div className="items-center form-control w-full">
           <label className="label">
-            <span className="label-text text-black">Name</span>
+            <span className="label-text text-black font-bold">Name</span>
           </label>
           <input
             type="text"
@@ -215,8 +215,8 @@ export const CreateNFTAndSubmit: FC<InputProps> = ({
             {...register("name", { required: true })}
           />
           {errors.name && <span>This field is required</span>}
-          <label className="label">
-            <span className="label-text text-black">Description</span>
+          <label className="label pt-4 md:pt-6">
+            <span className="label-text text-black font-bold">Description</span>
           </label>
           <input
             type="text"
@@ -228,9 +228,9 @@ export const CreateNFTAndSubmit: FC<InputProps> = ({
           {errors.description && <span>This field is required</span>}
 
           {!isOpenAIUsed && 
-            <div>
-              <label className="label">
-                <span className="label-text">Image</span>
+            <div className="items-center form-control w-full">
+              <label className="label pt-4 md:pt-6">
+                <span className="label-text text-black font-bold">Image</span>
               </label>
               <input
                 type="file"
@@ -244,12 +244,12 @@ export const CreateNFTAndSubmit: FC<InputProps> = ({
             </div>
           }
           
-          <div className="w-full pt-4 lg:pt-6">
+          <div className="w-full pt-4 md:pt-6">
           <div className="hidden group-disabled:block text-2xl">
-                  Wallet not connected
-              </div>
+            Wallet not connected
+          </div>
             <button
-              className="bg-d-pink hover:bg-pink-700 md:px-7 h-10 md:h-12 font-bold text-xl md:text-xl rounded-full text-white"
+              className="bg-d-pink hover:bg-pink-700 px-4 md:px-7 h-10 md:h-12 font-bold text-xl md:text-xl rounded-full text-white"
               type="submit"
             >
               Create NFT
@@ -260,20 +260,22 @@ export const CreateNFTAndSubmit: FC<InputProps> = ({
       </div>
 
       <form onSubmit={handleSubmit(onSubmitTransaction)}>
-        <div className="items-center form-control w-full pt-8">
-          {nftMintAccount}
+        <div className="items-center form-control w-full">
+          <label className="label pt-6 md:pt-8">
+            <span className="label-text text-black font-bold">NFT Mint Address</span>
+          </label>
           <input
             type="text"
             name="mint"
             id="mint"
             // value={nftMintAccountStr && nftMintAccountStr.toString()}
             placeholder={nftMintAccount}
-            className="input input-bordered w-full max-w-xs text-black bg-slate-200"
+            className="input input-bordered w-full max-w-xs text-black text-bold bg-slate-200 placeholder-black"
             {...register("mint", { required: false })}
           />
-          <div className="pt-4">
-          <button
-              className="bg-d-pink hover:bg-pink-700 py-0 px-4 md:px-7 h-10 md:h-12 rounded-full font-bold text-xl md:text-xl text-white"
+          <div className=" pt-4 md:pt-6">
+            <button
+              className="bg-d-pink hover:bg-pink-700 py-0 px-4 md:px-7 h-10 md:h-12 rounded-full font-bold text-xl md:text-x"
               type="submit"
             >
               Submit for NFTthon

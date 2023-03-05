@@ -41,8 +41,6 @@ import {
 import { IDL } from '../program/idl2';
 import { notify } from '../utils/notifications';
 
-//todo: avoid iteration of approval by phantom wallet?
-
 interface FormProps {
   linkToYourProject: string;
   image: File;
@@ -167,7 +165,6 @@ export const Launch: FC = () => {
         const contestCountAfterTransaction = counterAccountAfterTransaction.contestCount;
         console.log(contestCountAfterTransaction);
 
-        // todo: Should the name of organizer be recoreded as well?
         let contestData: ContestData = {
           contestId: contestPda,
           createdAt: Date.now(),
@@ -215,7 +212,7 @@ export const Launch: FC = () => {
             console.log("nft: ", nft)
             console.log("nftMintAccount: ", nftMintAccount)
             console.log("mint address: ", mintAddress.toString())
-            // const contestId = uuid();
+
             contestData.contestId = contestPda.toString();
             contestData.nftMintAccount = nftMintAccount.toString()
 
@@ -255,7 +252,7 @@ export const Launch: FC = () => {
               {!isOpenAIUsed && 
               <div className='flex flex-col flex-1 pb-3 justify-center items-center'>
                 <label className="label">
-                  <span className="label-text text-black">Upload Logo for your contest</span>
+                  <span className="label-text text-black">Upload Logo for Your Contest</span>
                 </label>
                 <input 
                   type="file"
@@ -276,7 +273,7 @@ export const Launch: FC = () => {
 
               <div className='flex flex-col flex-1 pb-3 justify-center items-center space-y-1'>
                 <label className="label">
-                  <span className="label-text text-center text-black">Link to your contest</span>
+                  <span className="label-text text-center text-black">Your Project Name or Link to Your Website</span>
                 </label>
                 <input type="text" 
                   name="linkToYourProject" 
@@ -335,7 +332,7 @@ export const Launch: FC = () => {
               
               <div className='flex flex-col pb-3 justify-center items-center space-y-1'>
                 <label className="label">
-                  <span className="label-text text-black">Contest Ends on</span>
+                  <span className="label-text text-black">Contest Ends at</span>
                 </label>
                 <input 
                   type="datetime-local"
@@ -349,7 +346,7 @@ export const Launch: FC = () => {
                 
               <div className='flex flex-col flex-1 justify-center items-center'>
                 <label className="label text-center">
-                  <span className="label-text text-center text-black">Description of contest</span>
+                  <span className="label-text text-center text-black">Description of Contest</span>
                 </label>
                 <div className="flex flex-col flex-1 w-full border border-spacing-1">
                   <textarea
@@ -364,7 +361,7 @@ export const Launch: FC = () => {
                   className="group max-w-xs bg-d-pink hover:bg-pink-700 py-2 px-4 md:px-7 h-10 md:h-12 rounded-full font-bold text-xl md:text-xl text-white"
                   type="submit" disabled={!publicKey}
                 >
-                  <div className="hidden group-disabled:block text-2xl font-bold text-black">
+                  <div className="hidden group-disabled:block text-2xl font-bold text-white">
                       Wallet not connected
                   </div>
                   {publicKey && <span  > 

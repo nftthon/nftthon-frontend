@@ -32,6 +32,7 @@ type ContestCardData = {
   id: string,
   data: ContestData,
   imageUrl: string,
+  numOfSubmittedNft: number,
 }
 
 type NftSubmissionData = {

@@ -175,13 +175,6 @@ export const ShowSubmittedNft: any = ( {
         new PublicKey(prizeTokenMint), 
         artistAddress);
 
-      // const artistPrizeTokenAccount = await getOrCreateAssociatedTokenAccount(
-      //     connection,
-      //     wallet,
-      //     prizeTokenMint,
-      //     artist1.publicKey
-      //     );
-
       const tx = await program.methods.claimByArtist().accounts(
         {
           artist: publicKey,
@@ -267,7 +260,7 @@ export const ShowSubmittedNft: any = ( {
 
       return (
         <div className="max-w-7xl mx-auto flex flex-col justify-center items-center">
-          <div className="text-d-pink text-3xl font-bold py-3">
+          <div className="text-d-pink text-3xl md:text-4xl font-bold pt-4 md:pt-8">
             Submitted NFTs
           </div>
          
@@ -278,7 +271,7 @@ export const ShowSubmittedNft: any = ( {
                 <div>
                 {console.log("nft on display nft", nft)}
                   <Image src={nft.params.imageUrl} width={400} height={400} loading="eager" alt="NFT image" className="w-full object-cover object-center" />
-                  <div className="flex flex-col justify-between flex-1 p-2 sm:p-4">
+                  <div className="flex flex-col justify-between flex-1 px-4 md:px-6 py-2 ms:py-4">
                     <h2 className="text-d-pink text-2xl font-bold mb-2">
                       {nft.params.name}
                     </h2>
@@ -286,13 +279,13 @@ export const ShowSubmittedNft: any = ( {
                     <h2 className="text-blue-800 text-lg font-semibold mb-2">
                       {nft.params.description}
                     </h2>
-                    <h2 className="text-pink-400 text-xl font-semibold mb-2">
+                    <h2 className="text-pink-400 text-xl font-semibold">
                       {nft.params.numOfLikes} Likes
                     </h2>
                   </div>
 
                   {publicKey && 
-                    <div className="flex flex-col flex-1 p-4">
+                    <div className="flex flex-col flex-1 p-2 md:p-4">
                       <div className="flex flex-col flex-1 pt-4 text-sm">
                         <button onClick={(e) => handleOnClickForVote(nft, e)}
                           className="bg-d-pink hover:bg-pink-700 md:px-7 h-10 md:h-12 font-bold text-lg md:text-lg rounded-2xl text-white">

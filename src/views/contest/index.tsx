@@ -38,10 +38,9 @@ export const ContestView: FC<ContestViewProps> = ({
     return (
       <div className="mx-auto p-4 md:hero">
         <div className="flex flex-col md:hero-content">
-          <h1 className="text-center text-black text-2xl font-bold">
+          <h1 className="text-center text-black text-xl font-bold">
             Wallet Not Connected
           </h1>
-          
         </div>
       </div>
     );
@@ -51,11 +50,8 @@ export const ContestView: FC<ContestViewProps> = ({
     <div className="flex flex-col relative max-w-5xl min-h-screen mx-auto p-4 mt-4 justify-center bg-transparent">
       <div className="text-center flex flex-col mt-6">
         <div key={id} className="card card-bordered border-0 bg-purple-100 shadow-xl mx-2 flex-1">
-          <h1 className="text-d-pink text-center text-3xl font-bold mt-4">
-            Info
-          </h1>
           <div className="card-body flex flex-col space-y-2 -mt-2">
-            <h2 className="card-title text-center text-4xl font-bold text-slate-700 flex-1">{titleOfContest}</h2>
+            <h2 className="card-title text-center text-4xl font-bold text-d-purple flex-1">{titleOfContest}</h2>
             <h2 className="card-content text-slate-700 text-left text-2xl flex-1 font-bold">
               <span className="font-normal text-slate-500">Prize:</span> {prizeAmount} SOL (For Artist: {prizeAmount*percentageToArtist/100} SOL)</h2>
             <h2 className="card-content text-slate-700 text-left text-2xl flex-1 font-bold">
@@ -84,13 +80,13 @@ export const ContestView: FC<ContestViewProps> = ({
           <span className="ml-3 text-sm font-medium text-slate-700">Wanna submit your handwork instead of AI generated art?</span>
         </label>
       </div>
-        <h1 className="pt-6 text-center text-d-pink text-3xl font-bold ">
+        <h1 className="pt-6 text-center text-d-pink text-3xl font-bold pb-2">
           Create your image with Open AI
         </h1>
         {isOpenAIUsed && <CreateImageWithOpenAI setOpenAIBuffer={setOpenAIBuffer}/>}
       </div>
       <div className='pt-4 mt-4 mx-2 rounded-3xl shadow-xl bg-purple-100'>
-        <h1 className="text-center text-d-pink font-bold text-3xl">
+        <h1 className="px-4 text-center text-d-pink font-bold text-3xl">
           Create NFT (from above AI image) and Submit
         </h1>
 

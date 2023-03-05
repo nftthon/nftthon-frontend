@@ -14,26 +14,13 @@ import { PROGRAM_ID } from 'program/config';
 import { useForm } from 'react-hook-form';
 import { fetchDb } from 'utils/firestore';
 
-import {
-  AnchorProvider,
-  Program,
-  web3,
-} from '@coral-xyz/anchor';
+import { AnchorProvider } from '@coral-xyz/anchor';
 import { toMetaplexFile } from '@metaplex-foundation/js';
-import {
-  getAssociatedTokenAddress,
-  TOKEN_PROGRAM_ID,
-} from '@solana/spl-token';
 import {
   useConnection,
   useWallet,
 } from '@solana/wallet-adapter-react';
-import {
-  PublicKey,
-  SystemProgram,
-} from '@solana/web3.js';
-
-import { IDL } from '../program/idl2';
+import { PublicKey } from '@solana/web3.js';
 
 interface FormProps {
   name: string;
@@ -129,57 +116,14 @@ export const CreateNFT: FC<InputProps> = ({
     }
   }
 
-  async function submit (_nftMintAccount: string) {
-    console.log("nftMintAccount", _nftMintAccount)
-    const provider = getProvider();
-    const program = new Program(IDL, PROGRAM_ID, provider);
-
-    let artworkPda = null;
-    let nftVaultPda = null;
-    const contestPda = new PublicKey(id);
-
-    [artworkPda, ] = PublicKey.findProgramAddressSync([Buffer.from("artwork"),
-      new PublicKey(contestPda).toBuffer(),
-      publicKey.toBuffer(),
-      ], programId);
-
-    [nftVaultPda, ] = PublicKey.findProgramAddressSync([Buffer.from("nft_vault"),
-      new PublicKey(contestPda).toBuffer(),
-      publicKey.toBuffer(),
-      ], programId);
-    
-    const artworkTokenAccount = await getAssociatedTokenAddress(
-      new PublicKey(_nftMintAccount), 
-      publicKey);
-
-    const tx = await program.methods.submit(
-    ).accounts(
-    {
-      artist: publicKey,
-      contest: contestPda,
-      artwork: artworkPda,
-      nftMint: new PublicKey(_nftMintAccount),
-      nftVaultAccount: nftVaultPda,
-      artworkTokenAccount: artworkTokenAccount,
-      rent: web3.SYSVAR_RENT_PUBKEY,
-      tokenProgram: TOKEN_PROGRAM_ID,
-      systemProgram: SystemProgram.programId,
-    })
-    .rpc();
-  }
-
   const onSubmitImage = async (data: FormProps) => {
     await createNft(data);
   };
 
   if (!wallet.publicKey) {
     return (
-      <div className="mx-auto p-4">
-        <div className="flex flex-col md:hero-content">
-          <h1 className="text-center text-2xl font-bold text-black">
-            Wallet Not Connected
-          </h1>
-        </div>
+      <div className="flex flex-col justify-center items-center mx-auto p-4 text-xl font-bold text-black">
+        Wallet Not Connected
       </div>
     );
   }
@@ -187,7 +131,7 @@ export const CreateNFT: FC<InputProps> = ({
   return (
     <div className="pl-6 -pt-4 relative flex flex-col justify-center">
       <label className="label">
-        <span className="label-text font-bold text-lg text-d-pink">
+        <span className="label-text font-bold text-lg md:text-2xl text-d-pink">
           Create NFT based on the created image😀
         </span>
       </label>
@@ -196,7 +140,7 @@ export const CreateNFT: FC<InputProps> = ({
       <form onSubmit={handleSubmit(onSubmitImage)}>
         <div className="items-center form-control w-full">
           <label className="label">
-            <span className="label-text text-black">Name</span>
+            <span className="label-text text-black font-bold">Name of NFT</span>
           </label>
           <input
             type="text"
@@ -207,7 +151,7 @@ export const CreateNFT: FC<InputProps> = ({
           />
           {errors.name && <span>This field is required</span>}
           <label className="label">
-            <span className="label-text text-black">Description</span>
+            <span className="label-text text-black font-bold">Description of NFT</span>
           </label>
           <input
             type="text"
@@ -217,23 +161,6 @@ export const CreateNFT: FC<InputProps> = ({
             {...register("description", { required: true })}
           />
           {errors.description && <span>This field is required</span>}
-
-          {!isOpenAIUsed && 
-            <div>
-              <label className="label">
-                <span className="label-text">Image</span>
-              </label>
-              <input
-                type="file"
-                name="image"
-                id="image"
-                className="input input-bordered w-full max-w-xs text-black bg-slate-200 shadow-xl"
-                accept="image/jpeg, image/png, image/jpg"
-                {...register("image", { required: false })}
-              />
-                {errors.image && <span>This field is required</span>}
-            </div>
-          }
           
           <div className="w-full pt-4 md:pt-8">
           <div className="hidden group-disabled:block text-normal">
