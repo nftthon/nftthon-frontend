@@ -1,7 +1,7 @@
 # NFTthon - NFT Contests for Artists and Fans, powered by Solana
 <img src="/public/screenshot_app.png"/>
 
-## Pitch-deck for Official Submission - Solana IRL Grizzlython 2023
+## Pitch-deck - Official Submission for Solana IRL Grizzlython 2023
 
 :film_projector: Visit here :arrow_right: [Youtube](https://www.youtube.com/watch?v=OOszOykJq-M)
 
