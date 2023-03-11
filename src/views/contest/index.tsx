@@ -51,7 +51,7 @@ export const ContestView: FC<ContestViewProps> = ({
       <div className="text-center flex flex-col mt-6">
         <div key={id} className="card card-bordered border-0 bg-purple-100 shadow-xl mx-2 flex-1">
           <div className="card-body flex flex-col space-y-2 -mt-2">
-            <h2 className="card-title text-center text-4xl font-bold text-d-purple flex-1">{titleOfContest}</h2>
+            <h2 className="card-title text-center text-4xl font-bold text-d-pink flex-1">{titleOfContest}</h2>
             <h2 className="card-content text-slate-700 text-left text-2xl flex-1 font-bold">
               <span className="font-normal text-slate-500">Prize:</span> {prizeAmount} SOL (For Artist: {prizeAmount*percentageToArtist/100} SOL)</h2>
             <h2 className="card-content text-slate-700 text-left text-2xl flex-1 font-bold">

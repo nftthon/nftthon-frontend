@@ -12,7 +12,7 @@ export const AppBar: FC = props => {
   const { autoConnect, setAutoConnect } = useAutoConnect();
 
   return (
-    <div className="flex justify-between items-center pt-2 md:pt-4 pb-2 md:pb-4 lg:pt-6 lg:pb-6 px-4 md:px-6  border border-gray-200 border-b-1 border-t-0">
+    <div className="flex justify-between items-center pt-2 md:pt-4 pb-2 md:pb-4 lg:pt-6 lg:pb-6 px-4 md:px-6 border shadow-md border-gray-200 border-b-1 border-t-0">
       <div className="hidden md:flex justify-center items-center">
         <Link href="/">
           <div className="flex justify-center">

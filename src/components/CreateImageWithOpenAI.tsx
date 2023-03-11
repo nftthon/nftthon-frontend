@@ -78,7 +78,7 @@ export const CreateImageWithOpenAI: FC<any> = ( { setOpenAIBuffer } ) => {
 
   return (
     <div className="pt-4 md:pt-6 px-6 flex flex-col items-center min-w-full">
-      <form onSubmit={handleSubmit(onSubmit)} className="form-control w-full flex flex-col items-center">
+      <form onSubmit={handleSubmit(onSubmit)} className="form-control w-full flex max-w-3xl flex-col items-center">
         <label className="label">
           <span className="label-text text-center font-bold text-lg md:text-2xl text-d-pink">
             Key in your prompt 😀
@@ -94,7 +94,7 @@ export const CreateImageWithOpenAI: FC<any> = ( { setOpenAIBuffer } ) => {
         {errors.name && <span>This field is required</span>}
         <div className='pt-4 md:pt-8 text-center'>
           <button
-              className="bg-gradient-to-r from-d-purple to-d-pink hover:bg-pink-700 py-0 px-4 md:px-7 h-10 md:h-12 rounded-full font-bold text-xl md:text-xl text-white"
+              className="bg-d-pink hover:bg-pink-700 py-0 px-4 md:px-7 h-10 md:h-12 rounded-full font-bold text-xl md:text-xl text-white"
               type="submit"
             >
               Create Image!

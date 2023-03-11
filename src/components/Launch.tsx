@@ -231,12 +231,12 @@ export const Launch: FC = () => {
       };
       
       return (
-        <div className='max-w-5xl sm:mx-auto rounded-2xl bg-purple-100 shadow-2xl'>
+        <div className='max-w-7xl sm:mx-auto rounded-2xl bg-purple-100 shadow-lg'>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="pt-4 px-6 lg:px-20 flex flex-col flex-1">
               <div className='flex flex-col flex-1 pb-3 justify-center items-center space-y-1'>
                 <label className="label text-center">
-                  <span className="label-text text-center text-black">Title of contest (less than 32 letters)</span>
+                  <span className="label-text text-center text-slate-800 font-bold xl:text-lg">Title of contest (less than 32 letters)</span>
                 </label>
                 <input 
                   type="text"
@@ -252,7 +252,7 @@ export const Launch: FC = () => {
               {!isOpenAIUsed && 
               <div className='flex flex-col flex-1 pb-3 justify-center items-center'>
                 <label className="label">
-                  <span className="label-text text-black">Upload Logo for Your Contest</span>
+                  <span className="label-text text-slate-800 font-bold xl:text-lg">Upload Logo for Your Contest</span>
                 </label>
                 <input 
                   type="file"
@@ -273,7 +273,7 @@ export const Launch: FC = () => {
 
               <div className='flex flex-col flex-1 pb-3 justify-center items-center space-y-1'>
                 <label className="label">
-                  <span className="label-text text-center text-black">Your Project Name or Link to Your Website</span>
+                  <span className="label-text text-center text-slate-800 font-bold xl:text-lg">Your Project Name or Link to Your Website</span>
                 </label>
                 <input type="text" 
                   name="linkToYourProject" 
@@ -287,7 +287,7 @@ export const Launch: FC = () => {
               
               <div className='flex flex-col flex-1 pb-3 justify-center items-center space-y-1'>
                 <label className="label text-center">
-                  <span className="label-text text-center text-black">Prize Token Mint Address</span>
+                  <span className="label-text text-center text-slate-800 font-bold xl:text-lg">Prize Token Mint Address</span>
                 </label>
                 <input 
                   type="text"
@@ -302,7 +302,7 @@ export const Launch: FC = () => {
               
               <div className='flex flex-col flex-1 pb-3 justify-center items-center space-y-1'>
                 <label className="label text-center">
-                  <span className="label-text text-center text-black">Prize Amount</span>
+                  <span className="label-text text-center text-slate-800 font-bold xl:text-lg">Prize Amount</span>
                 </label>
                 <input 
                   type="text"
@@ -317,7 +317,7 @@ export const Launch: FC = () => {
 
               <div className='flex flex-col flex-1 pb-3 justify-center items-center space-y-1'>
                 <label className="label">
-                  <span className="label-text text-black">Percentage to Artist</span>
+                  <span className="label-text text-slate-800 font-bold xl:text-lg">Percentage to Artist</span>
                 </label>
                 <input 
                   type="text"
@@ -332,7 +332,7 @@ export const Launch: FC = () => {
               
               <div className='flex flex-col pb-3 justify-center items-center space-y-1'>
                 <label className="label">
-                  <span className="label-text text-black">Contest Ends at</span>
+                  <span className="label-text text-slate-800 font-bold xl:text-lg">Contest Ends at</span>
                 </label>
                 <input 
                   type="datetime-local"
@@ -346,7 +346,7 @@ export const Launch: FC = () => {
                 
               <div className='flex flex-col flex-1 justify-center items-center'>
                 <label className="label text-center">
-                  <span className="label-text text-center text-black">Description of Contest</span>
+                  <span className="label-text text-center text-slate-800 font-bold xl:text-lg">Description of Contest</span>
                 </label>
                 <div className="flex flex-col flex-1 w-full border border-spacing-1">
                   <textarea

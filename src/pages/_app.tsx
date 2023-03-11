@@ -23,7 +23,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
           </Head>
 
           <ContextProvider>
-            <div className="mx-auto max-x-5xl flex flex-col h-screen bg-slate-50">
+            <div className="mx-auto max-x-5xl flex flex-col h-screen bg-slate-100">
             {/* <div className="mx-auto max-x-5xl flex flex-col h-screen bg-[#24193f]"> */}
               <Notifications />
               <AppBar/>

@@ -275,7 +275,7 @@ export const CreateNFTAndSubmit: FC<InputProps> = ({
           />
           <div className=" pt-4 md:pt-6">
             <button
-              className="bg-d-pink hover:bg-pink-700 py-0 px-4 md:px-7 h-10 md:h-12 rounded-full font-bold text-xl md:text-x"
+              className="bg-d-pink hover:bg-pink-700 py-0 px-4 md:px-7 h-10 md:h-12 rounded-full font-bold text-xl md:text-x text-white"
               type="submit"
             >
               Submit for NFTthon
