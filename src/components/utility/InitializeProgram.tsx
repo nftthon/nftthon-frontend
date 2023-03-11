@@ -1,10 +1,8 @@
 import {
   FC,
-  useCallback,
   useState,
 } from 'react';
 
-import Bundlr from '@bundlr-network/client';
 import {
   AnchorProvider,
   Program,
@@ -20,7 +18,6 @@ import {
   SystemProgram,
 } from '@solana/web3.js';
 
-// import idl from '../../../target/idl/nft_contest.json';
 import { IDL } from '../../program/idl2';
 import { notify } from '../../utils/notifications';
 
@@ -30,33 +27,20 @@ export const InitializeProgram: FC = () => {
     const programId = new PublicKey("8wRhhgnw55z1QELi6wDoAnKbnYsU9X9U5kZnMQ12vopf");
     const { connection } = useConnection();
     const wallet = useAnchorWallet();
-    const { publicKey, sendTransaction} = useWallet();
+    const { publicKey } = useWallet();
 
     const getProvider = () => {
         const provider = new AnchorProvider(connection, wallet, AnchorProvider.defaultOptions());
         return provider;
     }
 
-    const bundlr = new Bundlr("http://node1.bundlr.network", "solana", wallet);
-
-    const getBundlrAddress = async () => {
-        await bundlr.ready()
-        const fundStatus = await bundlr.fund(100_000_000)
-        return (await bundlr.address, fundStatus);
-    }
-    
-    // const program = workspace.NftContest as Program<NftContest>;
-    // console.log(program.programId.toBase58())
-
-    // connection.sendTransaction
-
-    const onClick = useCallback(async () => {
+    const onClick = async () => {
         if (!publicKey) {
             notify({ type: 'error', message: `Wallet not connected!` });
             console.log('error', `Send Transaction: Wallet not connected!`);
             return;
         }
-    // Tips: to get error messages, try should be used.
+        
         try {
             const provider = getProvider();
             const program = new Program(IDL, programId, provider);
@@ -65,10 +49,10 @@ export const InitializeProgram: FC = () => {
         console.log("counter pda: ", counterPda.toBase58());
 
         const tx = await program.methods.initialize().accounts(
-            {
-                programOwner: publicKey,
-                counter: counterPda,
-                systemProgram: SystemProgram.programId}
+        {
+            programOwner: publicKey,
+            counter: counterPda,
+            systemProgram: SystemProgram.programId}
         ).rpc();
 
         console.log("Sent! Signature: ", tx);
@@ -77,18 +61,7 @@ export const InitializeProgram: FC = () => {
         } catch (error: any) {
             console.log("Transaction Error: ", error);
         }
-    }
-        ,[getProvider, programId, publicKey]);
-
-    const onClickBundlr = useCallback (
-        async () => {
-            const bundlrAddress = await getBundlrAddress()[0];
-            const fundStatus = await getBundlrAddress()[1]
-            setBundlrAddress(bundlrAddress)
-            setFundStatus(fundStatus)
-            
-        }, [getBundlrAddress]
-    )
+    };
 
     return (
         <div className="my-4">

@@ -1,7 +1,4 @@
-import {
-  FC,
-  useCallback,
-} from 'react';
+import { FC } from 'react';
 
 import {
   useConnection,
@@ -20,7 +17,7 @@ export const SendTransaction: FC = () => {
     const { connection } = useConnection();
     const { publicKey, sendTransaction } = useWallet();
 
-    const onClick = useCallback(async () => {
+    const onClick = async () => {
         if (!publicKey) {
             notify({ type: 'error', message: `Wallet not connected!` });
             console.log('error', `Send Transaction: Wallet not connected!`);
@@ -47,7 +44,7 @@ export const SendTransaction: FC = () => {
             console.log('error', `Transaction failed! ${error?.message}`, signature);
             return;
         }
-    }, [publicKey, connection, sendTransaction]);
+    };
 
     return (
         <div>

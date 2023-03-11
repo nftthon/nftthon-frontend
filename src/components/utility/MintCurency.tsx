@@ -1,7 +1,4 @@
-import {
-  FC,
-  useCallback,
-} from 'react';
+import { FC } from 'react';
 
 import { AnchorProvider } from '@coral-xyz/anchor';
 import {
@@ -111,7 +108,6 @@ export const MintCurrency: FC = () => {
         if (typeof associatedToken == 'string') {
             associatedToken = new PublicKey(associatedToken)
         }
-
         // Create New Transaction
         let transaction = new Transaction
 
@@ -124,11 +120,10 @@ export const MintCurrency: FC = () => {
                 tokenAmount * 10**tokenDecimal as number // number
             )
         )
-
 		return transaction
 	}
   
-      const onClick = useCallback(async () => {
+      const onClick = async () => {
           if (!publicKey) {
               console.log('error', 'Wallet not connected!');
               notify({ type: 'error', message: 'error', description: 'Wallet not connected!' });
@@ -199,7 +194,7 @@ export const MintCurrency: FC = () => {
               notify({ type: 'error', message: `Mint failed!`, description: error?.message, txid: signature });
               console.log('error', `Mint failed! ${error?.message}`, signature);
           }
-      }, [publicKey, connection]);
+      };
   
       return (
           <div className="my-4">
