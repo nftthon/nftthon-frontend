@@ -5,7 +5,9 @@ import { getAllIds } from 'utils/contests';
 import { getSubmittedNftData } from 'utils/submissions';
 
 interface FetchedData {
-  contestAddress: string,
+  params: {
+    contestAddress: string,
+  titleOfContest: string,
   mintAddress: string, 
   artistAddress: string,
   contestOwner: string,
@@ -13,6 +15,7 @@ interface FetchedData {
   description: string, 
   imageUrl: string,
   numOfLikes: number
+  }
 }
 
 interface SubmissionsProps {

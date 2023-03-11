@@ -41,3 +41,15 @@ type NftSubmissionData = {
   description,
   imageUrl
 }
+
+type SubmittedNftData = {
+  contestAddress: string, 
+  titleOfContest: string,
+  mintAddress: string, 
+  artistAddress: string,
+  contestOwner: string,
+  name: string, 
+  description: string, 
+  imageUrl: string,
+  numOfLikes: number,
+}

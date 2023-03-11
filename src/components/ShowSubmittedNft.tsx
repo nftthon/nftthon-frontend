@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 import {
   doc,
   increment,
@@ -29,7 +31,9 @@ import { PRIZE_TOKEN_MINT_ADDRESS } from '../../constants';
 import { IDL } from '../program/idl2';
 
 interface FetchedData {
-  contestAddress: string,
+  params: {
+    contestAddress: string,
+  titleOfContest: string,
   mintAddress: string, 
   artistAddress: string,
   contestOwner: string,
@@ -37,20 +41,20 @@ interface FetchedData {
   description: string, 
   imageUrl: string,
   numOfLikes: number
+  }
 }
 
 interface SubmissionsProps {
-  fetchedData: FetchedData[],
+  nftSubmissionsData: FetchedData[],
 }
 
-export const ShowSubmittedNft: any = ( { 
-  nftSubmissionsData
- }) => {
+export const ShowSubmittedNft: FC<SubmissionsProps> = (props) => {
+  const { nftSubmissionsData } = props;
   let artworkPda = null
   let counterPda = null;
   let voteDataPda = null;
   let prizeVaultPda = null;
-
+  console.log("nftSubmissionsData: ", nftSubmissionsData)
   let maxNumOfLikes = 0
   for (let d of nftSubmissionsData) {
     if (d.params.numOfLikes > maxNumOfLikes) {
@@ -68,7 +72,7 @@ export const ShowSubmittedNft: any = ( {
   }
 
   const prizeTokenMint = new PublicKey(PRIZE_TOKEN_MINT_ADDRESS);
-  console.log("nftSubmissionData: ", nftSubmissionsData)
+  console.log("nftSubmissionsData: ", nftSubmissionsData)
 
   const handleOnClickForVote = async (nft, e) => {
     e.preventDefault()
