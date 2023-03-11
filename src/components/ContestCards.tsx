@@ -48,7 +48,7 @@ export const ContestCards = ( { fetchedData }) => {
                     className="object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
           
                   <div className="flex flex-col p-2 justify-between md:p-4">
-                    <h2 className="text-d-purple text-2xl font-bold mb-2">
+                    <h2 className="text-d-pink text-2xl font-bold mb-2">
                       {contest.params.data.contestData.titleOfContest}
                     </h2>
                     

@@ -222,6 +222,7 @@ export const Launch: FC = () => {
               })
 
             await setDoc(doc(db, "nftMintAccountList", contestData.contestId), {
+                nftMintAccountStr: []
               })
         }
         

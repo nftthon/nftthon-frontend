@@ -27,8 +27,6 @@ import { notify } from '../../utils/notifications';
 export const InitializeProgram: FC = () => {
     const [bundlrAddress, setBundlrAddress] = useState("");
     const [fundStatus, setFundStatus] = useState("");
-    let counterPda = null;
-    let _counterBump = null;
     const programId = new PublicKey("8wRhhgnw55z1QELi6wDoAnKbnYsU9X9U5kZnMQ12vopf");
     const { connection } = useConnection();
     const wallet = useAnchorWallet();
@@ -59,29 +57,28 @@ export const InitializeProgram: FC = () => {
             return;
         }
     // Tips: to get error messages, try should be used.
-    try {
-        const provider = getProvider();
-        const program = new Program(IDL, programId, provider);
-        [counterPda, _counterBump] = await PublicKey.findProgramAddress([utils.bytes.utf8.encode("counter3")
-      ], programId);
-      console.log("counter pda: ", counterPda.toBase58());
+        try {
+            const provider = getProvider();
+            const program = new Program(IDL, programId, provider);
+            const [counterPda, _counterBump] = PublicKey.findProgramAddressSync([utils.bytes.utf8.encode("counter")
+        ], programId);
+        console.log("counter pda: ", counterPda.toBase58());
 
-      const tx = await program.methods.initialize().accounts(
-        {
-            programOwner: publicKey,
-            counter: counterPda,
-            systemProgram: SystemProgram.programId}
-      ).rpc();
+        const tx = await program.methods.initialize().accounts(
+            {
+                programOwner: publicKey,
+                counter: counterPda,
+                systemProgram: SystemProgram.programId}
+        ).rpc();
 
-      console.log("Sent! Signature: ", tx);
+        console.log("Sent! Signature: ", tx);
 
      
         } catch (error: any) {
             console.log("Transaction Error: ", error);
         }
     }
-
-        ,[publicKey, notify, connection, sendTransaction]);
+        ,[getProvider, programId, publicKey]);
 
     const onClickBundlr = useCallback (
         async () => {
@@ -90,8 +87,7 @@ export const InitializeProgram: FC = () => {
             setBundlrAddress(bundlrAddress)
             setFundStatus(fundStatus)
             
-        }, [bundlrAddress, fundStatus]
-
+        }, [getBundlrAddress]
     )
 
     return (

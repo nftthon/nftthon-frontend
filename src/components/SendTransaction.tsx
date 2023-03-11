@@ -1,7 +1,20 @@
-import { useConnection, useWallet } from '@solana/wallet-adapter-react';
-import { Keypair, SystemProgram, Transaction, TransactionSignature } from '@solana/web3.js';
-import { FC, useCallback } from 'react';
-import { notify } from "../utils/notifications";
+import {
+  FC,
+  useCallback,
+} from 'react';
+
+import {
+  useConnection,
+  useWallet,
+} from '@solana/wallet-adapter-react';
+import {
+  Keypair,
+  SystemProgram,
+  Transaction,
+  TransactionSignature,
+} from '@solana/web3.js';
+
+import { notify } from '../utils/notifications';
 
 export const SendTransaction: FC = () => {
     const { connection } = useConnection();
@@ -34,7 +47,7 @@ export const SendTransaction: FC = () => {
             console.log('error', `Transaction failed! ${error?.message}`, signature);
             return;
         }
-    }, [publicKey, notify, connection, sendTransaction]);
+    }, [publicKey, connection, sendTransaction]);
 
     return (
         <div>

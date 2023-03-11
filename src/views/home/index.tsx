@@ -68,7 +68,7 @@ export const HomeView: FC<any> = ( { fetchedData } ) => {
             Anyone can launch an NFT contests.
           </div> */}
           <div className="flex flex-col justify-center items-center pt-6 md:pt-10">
-            <Link href="/launch">
+            <Link href="/launch" passHref={true}>
               <button className=" bg-d-pink hover:bg-pink-700 py-0 px-4 md:px-7 h-10 md:h-12 rounded-full font-bold text-xl md:text-xl text-white">
                 Launch Contest
               </button>
