@@ -55,12 +55,13 @@ export const ShowSubmittedNft: FC<SubmissionsProps> = (props) => {
   let voteDataPda = null;
   let prizeVaultPda = null;
   console.log("nftSubmissionsData: ", nftSubmissionsData)
+
   let maxNumOfLikes = 0
-  for (let d of nftSubmissionsData) {
+  nftSubmissionsData.map((d) => {
     if (d.params.numOfLikes > maxNumOfLikes) {
       maxNumOfLikes = d.params.numOfLikes
     }
-  }
+  })
 
   const { connection } = useConnection();
   const wallet = useWallet(); 
