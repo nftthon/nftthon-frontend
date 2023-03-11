@@ -28,15 +28,15 @@ export const AppBar: FC = props => {
           <div>Home</div>
         </Link>
 
-        <Link href="/launch">
+        <Link href="/launch" passHref={true}>
           <div>Launch</div>
         </Link>
 
-        <Link href="/faq">
+        <Link href="/faq" passHref={true}>
           <div>FAQ</div>
         </Link>
 
-        <Link href="/utility">
+        <Link href="/utility" passHref={true}>
           <div>Utility</div>
         </Link>
       </div>
