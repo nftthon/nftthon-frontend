@@ -74,14 +74,14 @@ export const ContestCards = ( { fetchedData }) => {
                     </h2>
                   </div>
                   <div className="flex flex-col justify-between space-y-4 pb-2 px-4 md:px-6">
-                    <Link href={`/contests/${contest.params.id}`}>
+                    <Link href={`/contests/${contest.params.id}`} passHref={true}>
                       <button className="bg-d-pink hover:bg-pink-700 max-w-sm px-2 md:px-4 h-10 md:h-14 rounded-full font-bold text-normal md:text-xl text-white">
                         Join as an Artist
                       </button>
                     </Link>
                     
                     {(contest.params.numOfSubmittedNft != 0) &&
-                    <Link href={`/submissions/${contest.params.id}`}>
+                    <Link href={`/submissions/${contest.params.id}`} passHref={true}>
                       <button className=" bg-d-pink hover:bg-pink-700 max-w-sm px-2 md:px-4 h-10 md:h-14 rounded-full font-bold text-normal md:text-xl text-white">
                         Check NFTs/Vote
                       </button>

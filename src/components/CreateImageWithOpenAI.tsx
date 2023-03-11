@@ -103,7 +103,7 @@ export const CreateImageWithOpenAI: FC<any> = ( { setOpenAIBuffer } ) => {
       </form>
         <div className="flex justify-center py-4 lg:py-8">
           <Image src={imageUrl} width={300} height={300} unoptimized={true} 
-            className="rounded-3xl w-full h-full object-cover object-center"></Image>
+            className="rounded-3xl w-full h-full object-cover object-center" alt="NFT image"></Image>
         </div>
       </div>
   );
