@@ -41,7 +41,6 @@ const plugins = [
 ];
 
 const nextConfig = {
-  distDir: "build",
   images: {
     remotePatterns: [
       {
