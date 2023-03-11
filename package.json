@@ -4,10 +4,10 @@
   "license": "Unlicense",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "now-build": "npm run build && next export"
   },
   "dependencies": {
     "@bundlr-network/client": "^0.9.11",
