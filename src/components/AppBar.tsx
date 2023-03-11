@@ -14,9 +14,9 @@ export const AppBar: FC = props => {
   return (
     <div className="flex justify-between items-center pt-2 md:pt-4 pb-2 md:pb-4 lg:pt-6 lg:pb-6 px-4 md:px-6 border shadow-md border-gray-200 border-b-1 border-t-0">
       <div className="hidden md:flex justify-center items-center">
-        <Link href="/">
+        <Link href="/" passHref={true}>
           <div className="flex justify-center">
-            <Image src="/logo.png" width={50} height={50} className="h-10 w-10 px-4"></Image>
+            <Image src="/logo.png" width={50} height={50} className="h-10 w-10 px-4" alt="logo"></Image>
             <div className="px-4 xl:px-6 items-center text-2xl md:text-4xl font-bold text-d-pink">
               NFTthon 
             </div>
@@ -24,7 +24,7 @@ export const AppBar: FC = props => {
         </Link>
       </div>
       <div className="pr-2 text-xs md:text-lg text-slate-700 font-bold flex justify-center items-center space-x-4 md:space-x-8">
-        <Link href="/">
+        <Link href="/" passHref={true}>
           <div>Home</div>
         </Link>
 
