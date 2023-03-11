@@ -13,8 +13,9 @@ import {
 
 import { fetchDb } from './firestore';
 
+const db = fetchDb();
+
 export async function getSubmittedNftData(id: string) {
-  const db = fetchDb();
   const docRef = doc(collection(db, "nftMintAccountList"), id);
   const connection = new Connection(clusterApiUrl("devnet"));
   const metaplex = new Metaplex(connection);
