@@ -3,6 +3,6 @@
 
 ## Pitch-deck - Official Submission for Solana IRL Grizzlython 2023
 
-:film_projector: Visit here :arrow_right: [Youtube](https://www.youtube.com/watch?v=OOszOykJq-M)
+:film_projector: Visit here :arrow_right: [Youtube](https://www.youtube.com/@nftthon)
 
 #### Made with :heart: in Sg :singapore:
