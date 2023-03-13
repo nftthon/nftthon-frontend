@@ -48,10 +48,7 @@ const nextConfig = {
         hostname: 'firebasestorage.googleapis.com',
       },
     ],
-    domains: ['oaidalleapiprodscus.blob.core.windows.net',
-              'picsum.photos',
-              'arweave.net',
-              'media.discordapp.net',
+    domains: ['arweave.net',
               'node1.bundlr.network',
               'firebasestorage.googleapis.com',
             ]
